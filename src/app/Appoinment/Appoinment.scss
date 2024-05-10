@@ -1,0 +1,425 @@
+.childContainer {
+    height: 100%;
+    width: 100%;
+    padding: 0 40px;
+    box-sizing: border-box;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.react-calendar {
+    width: 70%;
+    background: white;
+    line-height: 1.125em;
+    border: none;
+    height: 100vh;
+
+    .react-calendar__tile--active {
+        background-image: var(--primary-glow);
+        color: white;
+
+        &:hover {
+            color: black;
+        }
+    }
+}
+
+
+.react-calendar__tile {
+    height: inherit;
+    border: 5px solid #a0a096;
+    height: 95px;
+}
+
+.appointmentNavBarcontainer {
+    min-height: 90%;
+    width: 25%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    padding: 2.5%;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.appointmentNavBar {
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: start;
+    padding: 2.5%;
+    gap: 10px;
+
+
+    .navBarDateContainer {
+        height: auto;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 5px;
+        margin: 10px 0;
+
+        .navDate {
+            height: inherit;
+            width: 30%;
+            font-weight: 500;
+        }
+
+        .navDateLine {
+            height: 1px;
+            width: 70%;
+            background-color: black;
+        }
+    }
+}
+
+abbr[title] {
+    text-decoration: none;
+}
+
+span {
+    align-self: center;
+    justify-self: center;
+}
+
+.navAppointmentDetails {
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #c9e4de;
+    padding: 5px 10px;
+    border-radius: 5px;
+    user-select: none;
+    gap: 5px;
+    position: relative;
+
+    .hoverPopup {
+        height: 100px;
+        width: 200px;
+        padding: 10px;
+        background-color: whitesmoke;
+        position: absolute;
+        right: -230px;
+        top: 0;
+        border-radius: 10px;
+        box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+            rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+        z-index: 999;
+        display: none;
+
+        &::after {
+            content: "";
+            height: 30px;
+            width: 30px;
+            background-color: whitesmoke;
+            position: absolute;
+            top: 10px;
+            left: -5px;
+            rotate: 50deg;
+        }
+    }
+
+
+    .bookingId {
+        width: 50%;
+        font-weight: 500;
+        user-select: none;
+    }
+
+    .bookingOptions {
+        height: inherit;
+        width: 20%;
+        display: flex;
+        align-items: center;
+        user-select: none;
+        justify-content: space-between;
+
+        .imgcontainer {
+            height: 100%;
+            width: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: end;
+            justify-content: flex-end;
+        }
+    }
+
+
+    &:hover {
+        .hoverPopup {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+
+
+.navAppointmentDetails:nth-child(1n+1) {
+    background-color: #c9e4de;
+}
+
+.navAppointmentDetails:nth-child(2n+1) {
+    background-color: #f2c6de;
+}
+
+.navAppointmentDetails:nth-child(3n+1) {
+    background-color: #dbcdf0;
+}
+
+.gap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.form-main-container {
+    height: 100vh;
+    width: 0%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.form {
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.842);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    transition: all ease-in-out 0.5s;
+}
+
+.form-content {
+    width: 400px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+input[type="text" i] {
+    height: 20px;
+    border: none;
+    padding: 10px;
+    border-bottom: 2px solid black;
+    width: 100%;
+    font-size: 15px;
+}
+
+.input-list-row {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 90%;
+
+    input {
+        height: 20px;
+        border: none;
+        padding: 10px;
+        background-color: transparent;
+        border-bottom: 2px solid black;
+        width: 100%;
+        font-size: 15px;
+    }
+
+    input:focus-visible {
+        outline: none;
+        filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.3));
+    }
+
+    label {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        color: gray;
+        font-size: 15px;
+        transition: all ease-in-out 0.5s;
+        cursor: pointer;
+
+        span {
+            font-size: 12px;
+        }
+
+        &.active {
+            transform: translateY(-20px) scale(0.8);
+            transform-origin: 0 0;
+            color: black;
+            transition: all ease-in-out 0.5s;
+            border-radius: 0;
+        }
+    }
+}
+
+.input-row {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 90%;
+    margin: 10px 0;
+
+    input:focus-visible {
+        outline: none;
+        filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.3));
+    }
+
+    label {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        color: gray;
+        font-size: 15px;
+        transition: all ease-in-out 0.5s;
+        cursor: pointer;
+
+        span {
+            font-size: 12px;
+        }
+
+        &.active {
+            transform: translateY(-20px) scale(0.8);
+            transform-origin: 0 0;
+            color: black;
+            transition: all ease-in-out 0.5s;
+            border-radius: 0;
+        }
+    }
+}
+
+
+.submit {
+    width: 100px;
+    padding: 10px;
+    color: white;
+    background-image: var(--primary-glow);
+    font-size: 15px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+.existing-wraper {
+    width: 90%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.existing-sub-wraper {
+    width: 30%;
+    gap: 10px;
+    display: flex;
+    line-height: 50px;
+}
+
+form {
+    width: 90%;
+    height: 90%;
+}
+
+.day-wrap {
+    display: flex;
+    align-items: end;
+    justify-content: start;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    position: relative;
+    overflow: unset !important;
+    color: black;
+    border-radius: 10px;
+    font-weight: 600;
+
+    .extraAppointmentModal {
+        height: auto;
+        width: 200px;
+        padding: 10px;
+        background-color: whitesmoke;
+        position: absolute;
+        right: 0;
+        top: 0;
+        border-radius: 10px;
+        box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+            rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+        z-index: 9;
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+
+        .extraAppointmentdate {
+            height: 50px;
+            width: 50px;
+            background-color: #c9e4de;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            border-radius: 50px;
+
+        }
+
+        .imgcontainer {
+            height: 100%;
+            width: 20px;
+            cursor: pointer;
+            position: inherit;
+            top: 5px;
+            right: 5px;
+        }
+    }
+
+    .navAppointmentDetails {
+        height: auto;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #c9e4de;
+        color: black;
+        padding: 2px 10px;
+        border-radius: 5px;
+        user-select: none;
+        gap: 5px;
+        position: relative;
+    }
+}
+
+.more {
+    font-weight: 600;
+    width: 100%;
+    border-radius: 5px;
+
+    &:hover {
+        background-color: white;
+    }
+}

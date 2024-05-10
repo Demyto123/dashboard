@@ -1,0 +1,198 @@
+.loginFormmainContainer {
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.loginFormContainer {
+    height: 80%;
+    width: 90%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        content: "";
+        height: 350px;
+        width: 350px;
+        border-radius: 50%;
+        background-image: linear-gradient(0deg, #0098f7c4, rgba(0, 153, 255, 0.308));
+        position: absolute;
+        bottom: 100px;
+        left: 50px;
+        animation: rotateCircle 10s infinite ease-in-out;
+        transition: all smooth 5s ease-in-out;
+    }
+
+    @keyframes rotateCircle {
+        10% {
+            background-image: linear-gradient(36deg, #0098f7c4, rgba(0, 153, 255, 0.308));
+        }
+
+        20% {
+            background-image: linear-gradient(72deg, #0098f7c4, rgba(0, 153, 255, 0.308));
+        }
+
+        30% {
+            background-image: linear-gradient(108deg, #0098f7c4, rgba(0, 153, 255, 0.308));
+
+        }
+
+        40% {
+            background-image: linear-gradient(144deg, #0098f7c4, rgba(0, 153, 255, 0.308));
+        }
+
+        50% {
+            background-image: linear-gradient(180deg, #0098f7c4, rgba(0, 153, 255, 0.308));
+        }
+
+        60% {
+            background-image: linear-gradient(216deg, #0098f7c4, rgba(0, 153, 255, 0.308));
+        }
+
+        70% {
+            background-image: linear-gradient(252deg, #0098f7c4, rgba(0, 153, 255, 0.308));
+        }
+
+        80% {
+            background-image: linear-gradient(288deg, #0098f7c4, rgba(0, 153, 255, 0.308));
+        }
+
+        90% {
+            background-image: linear-gradient(324deg, #0098f7c4, rgba(0, 153, 255, 0.308));
+        }
+
+        100% {
+            background-image: linear-gradient(360deg, #0098f7c4, rgba(0, 153, 255, 0.308));
+        }
+    }
+
+    &::before {
+        content: "";
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        background: linear-gradient(500deg, #0099f7, rgba(0, 153, 255, 0.308));
+        position: absolute;
+        bottom: 55px;
+        left: 250px;
+        animation: rotateCircle 10s infinite;
+        transition: all smooth ease-in-out;
+    }
+
+    .loginFormImageContainer {
+        height: 80%;
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        position: relative;
+        z-index: 9;
+
+        .image {
+            height: 80%;
+            width: 80%;
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        &::after {
+            content: "";
+            height: 350px;
+            width: 350px;
+            border-radius: 50%;
+            background-color: rgba(0, 153, 255, 0.308);
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: -1;
+        }
+    }
+
+    .loginFormInputContainer {
+        height: 80%;
+        width: 70%;
+        border-radius: 10px;
+        z-index: 99;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        backdrop-filter: blur(9px) saturate(176%);
+        -webkit-backdrop-filter: blur(9px) saturate(176%);
+        background-color: rgba(17, 25, 40, 0.55);
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+
+        .inputContainer {
+            height: 150px;
+            width: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+            gap: 20px;
+
+            .input {
+                min-width: 100%;
+                padding: 12px;
+                border: none;
+                border-radius: 5px;
+                box-shadow: 2px 2px 7px 0 rgb(0, 0, 0, 0.2);
+                outline: none;
+            }
+
+            .input:invalid {
+                animation: justshake 0.3s forwards;
+                color: red;
+            }
+
+            @keyframes justshake {
+                25% {
+                    transform: translateX(5px);
+                }
+
+                50% {
+                    transform: translateX(-5px);
+                }
+
+                75% {
+                    transform: translateX(5px);
+                }
+
+                100% {
+                    transform: translateX-(5px);
+                }
+            }
+
+        }
+
+        .submitButton {
+            width: 100px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: var(--primary-glow);
+            color: white;
+            border-radius: 5px;
+        }
+
+    }
+}
